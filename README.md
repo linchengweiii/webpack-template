@@ -3,4 +3,5 @@
 ## How to start
 	$ npm install
 	$ npm start		// to start a dev server
+	$ npm run build // build bundle.js in ./public
 
