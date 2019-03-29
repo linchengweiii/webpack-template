@@ -17,6 +17,10 @@ module.exports = {
 					'css-loader',
 					'sass-loader'
 				]
+			},
+			{
+				test: /\.(jpe?g|gif|mp3|mp4|ttf|wav|png|svg)$/,
+				use: ['url-loader?limit=10000']
 			}
 		]
 	},
