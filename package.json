@@ -14,7 +14,10 @@
     "presets": [
       "@babel/preset-env",
       "@babel/preset-react"
-    ]
+    ],
+	"plugins": [
+		"@babel/plugin-propasal-clss-properties"
+	]
   },
   "dependencies": {
     "mini-css-extract-plugin": "^0.5.0",
@@ -24,6 +27,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
     "@babel/preset-env": "^7.3.1",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.5",
