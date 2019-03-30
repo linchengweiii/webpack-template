@@ -15,9 +15,9 @@
       "@babel/preset-env",
       "@babel/preset-react"
     ],
-	"plugins": [
-		"@babel/plugin-propasal-clss-properties"
-	]
+    "plugins": [
+      "@babel/plugin-propasal-clss-properties"
+    ]
   },
   "dependencies": {
     "mini-css-extract-plugin": "^0.5.0",
@@ -31,6 +31,7 @@
     "@babel/preset-env": "^7.3.1",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.5",
+    "babel-polyfill": "^6.26.0",
     "css-loader": "^2.1.0",
     "file-loader": "^3.0.1",
     "node-sass": "^4.11.0",
