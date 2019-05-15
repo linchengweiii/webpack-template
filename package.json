@@ -16,7 +16,7 @@
       "@babel/preset-react"
     ],
     "plugins": [
-      "@babel/plugin-propasal-clss-properties"
+      "@babel/plugin-proposal-class-properties"
     ]
   },
   "dependencies": {
