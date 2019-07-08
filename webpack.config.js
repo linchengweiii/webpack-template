@@ -1,8 +1,13 @@
 const webpack = require('webpack')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const devMode = process.env.NODE_ENV !== 'production'
 
 module.exports = {
 	entry: ['babel-polyfill', './src/js/index.js', './src/scss/style.scss'],
+	plugins: [
+		new webpack.HotModuleReplacementPlugin(),
+		new MiniCssExtractPlugin({ filename: 'style.css' })
+	],
 	module: {
 		rules: [
 			{
@@ -11,9 +16,15 @@ module.exports = {
 				use: ['babel-loader']
 			},
 			{
-				test: /\.scss$/,
+				test: /\.(sa|sc|c)ss$/,
 				use: [
-					process.env.NODE_ENV !== 'production' ? 'style-loader' : MiniCssExtractPlugin.loader,
+					{
+						loader: MiniCssExtractPlugin.loader,
+						options: {
+							hmr: process.env.NODE_ENV === 'development',
+							reloadAll: true
+						}
+					},
 					'css-loader',
 					'sass-loader'
 				]
@@ -32,12 +43,8 @@ module.exports = {
 		publicPath: '/',
 		filename: 'bundle.js'
 	},
-	plugins: [
-		new webpack.HotModuleReplacementPlugin(),
-		new MiniCssExtractPlugin({ filename: 'style.css' })
-	],
 	devServer: {
 		contentBase: './public',
 		hot: true
-	}
+	},
 }
