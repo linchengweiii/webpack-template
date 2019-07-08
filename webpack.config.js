@@ -21,8 +21,7 @@ module.exports = {
 					{
 						loader: MiniCssExtractPlugin.loader,
 						options: {
-							hmr: process.env.NODE_ENV === 'development',
-							reloadAll: true
+							hmr: process.env.NODE_ENV === 'development'
 						}
 					},
 					'css-loader',
